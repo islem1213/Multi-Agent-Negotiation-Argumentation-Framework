@@ -1,7 +1,6 @@
 # Multi-Agent Negotiation & Argumentation Framework
 
-The Week 1 foundation for a transparent multi-agent negotiation framework. It
-contains typed scenario and move schemas, deterministic buyer/seller agents,
+It contains typed scenario and move schemas, deterministic buyer/seller agents,
 and a small turn-based orchestrator. No LLM, argument graph, UI, metrics, or
 benchmarking layer is included yet.
 
