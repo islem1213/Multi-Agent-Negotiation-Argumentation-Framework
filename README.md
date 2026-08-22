@@ -4,6 +4,16 @@ It contains typed scenario and move schemas, deterministic buyer/seller agents,
 and a small turn-based orchestrator. No LLM, argument graph, UI, metrics, or
 benchmarking layer is included yet.
 
+## Motivation / research question
+
+Most multi-agent negotiation demos treat dialogue as unstructured text and
+evaluate only the final agreement. This project explores whether negotiations
+can instead be represented as typed, replayable moves and arguments, making it
+possible to inspect how agents justify, challenge, and revise proposals—not
+only whether they reach a deal. The guiding research question is: **how can
+structured argument traces make LLM-agent negotiations more transparent,
+auditable, and empirically evaluable?**
+
 ## Quick start
 
 ```bash
