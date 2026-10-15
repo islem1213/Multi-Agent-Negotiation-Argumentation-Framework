@@ -4,14 +4,17 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "multi-agent-negotiation"
-version = "0.1.0"
-description = "A small, typed foundation for multi-agent price negotiation."
+version = "0.2.0"
+description = "Typed, replayable multi-agent negotiation with structured argumentation and evaluation."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["pydantic>=2.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
+
+[project.scripts]
+negotiate = "negotiation.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

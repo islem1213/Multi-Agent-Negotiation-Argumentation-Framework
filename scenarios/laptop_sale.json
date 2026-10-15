@@ -1,0 +1,35 @@
+{
+  "id": "laptop-sale",
+  "resource": "used laptop",
+  "currency": "EUR",
+  "max_rounds": 6,
+  "first_mover": "buyer",
+  "buyer": {
+    "id": "buyer",
+    "reservation_price": 900,
+    "initial_offer": 650,
+    "beta": 0.5,
+    "persuadability": 0.15,
+    "arguments": [
+      {"id": "b1", "claim": "The price should be close to 750 EUR",
+       "grounds": "three comparable listings of the same model sell for 720-780 EUR"},
+      {"id": "b2", "claim": "The battery replacement does not justify a premium",
+       "grounds": "a new battery costs about 60 EUR", "attacks": ["s1"]},
+      {"id": "b3", "claim": "The remaining warranty adds little value",
+       "grounds": "the warranty expires in four months", "attacks": ["s2"]}
+    ]
+  },
+  "seller": {
+    "id": "seller",
+    "reservation_price": 700,
+    "initial_offer": 1000,
+    "beta": 0.5,
+    "persuadability": 0.15,
+    "arguments": [
+      {"id": "s1", "claim": "The laptop is worth more than typical listings",
+       "grounds": "the battery was replaced last month"},
+      {"id": "s2", "claim": "Comparable listings are not comparable",
+       "grounds": "they come without the manufacturer warranty this one still has", "attacks": ["b1"]}
+    ]
+  }
+}

@@ -1,10 +1,13 @@
-from negotiation import AgentProfile, NegotiationOrchestrator, PriceNegotiationScenario, RuleBasedBuyer, RuleBasedSeller
+"""Run the laptop scenario and print the transcript, argument graph and metrics."""
 
+from pathlib import Path
 
-scenario = PriceNegotiationScenario(
-    id="used-laptop", resource="used laptop", max_rounds=5,
-    buyer=AgentProfile(id="buyer", reservation_price=900, initial_offer=650, concession_rate=0.5),
-    seller=AgentProfile(id="seller", reservation_price=700, initial_offer=1000, concession_rate=0.5),
+from negotiation import PriceNegotiationScenario, evaluate, run
+from negotiation.reporting import format_argument_graph, format_metrics, format_transcript
+
+scenario = PriceNegotiationScenario.model_validate_json(
+    (Path(__file__).resolve().parents[1] / "scenarios" / "laptop_sale.json").read_text(encoding="utf-8")
 )
-result = NegotiationOrchestrator(scenario, RuleBasedBuyer(scenario.buyer), RuleBasedSeller(scenario.seller)).run()
-print(result.model_dump_json(indent=2))
+result = run(scenario)
+print(format_transcript(result, scenario), format_argument_graph(result),
+      format_metrics(evaluate(result, scenario)), sep="\n\n")

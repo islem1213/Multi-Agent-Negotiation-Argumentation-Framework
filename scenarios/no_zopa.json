@@ -1,0 +1,8 @@
+{
+  "id": "no-zopa",
+  "resource": "vintage camera",
+  "currency": "EUR",
+  "max_rounds": 5,
+  "buyer": {"id": "buyer", "reservation_price": 400, "initial_offer": 250, "beta": 1.0},
+  "seller": {"id": "seller", "reservation_price": 550, "initial_offer": 800, "beta": 1.0}
+}
